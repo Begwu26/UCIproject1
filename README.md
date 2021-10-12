@@ -23,7 +23,8 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly accessible,redundant orreliable in addition to restricting access to the network. Load balancers protects the system from DDos attacks by shifting attack traffic. The advantage of a jumpbox is to give access to the user from a single node that can be secured and monitored.
 
--What aspect of security do load balancers protect? What is the advantage of a jump box?
+-What aspect of security do load balancers protect? 
+What is the advantage of a jump box?
 Load balancers protects the system from DDos attacks by shifting attack traffic. The advantage of a jumpbox is to give access to the user from a single node that can be secured and monitored.
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log and system traffic.
 
