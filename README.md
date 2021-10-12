@@ -76,26 +76,20 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 The playbook implements the following tasks:
 -In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
 
-- Install: docker.io
-![install_docker](https://user-images.githubusercontent.com/85095592/136896210-ed3e7bbf-871b-43ec-8fab-b15cc1aa8c98.png)- Install: ELK
-name:Install elk
-hosts : elk
-remote_user: ubuntu
-become: ture
-task:
+ docker Install.
+![install_docker](https://user-images.githubusercontent.com/85095592/136896210-ed3e7bbf-871b-43ec-8fab-b15cc1aa8c98.png)
 
-- Install: docker python module
-name:- Install Docker python module
-pip:
-name: docker
-start: present
 
-- Install: python3-pip-
-name: Install pip
-apt:
-name: python3-pip
-state:present
+ Install: ELK
+![specify_config](https://user-images.githubusercontent.com/85095592/136896521-85e0616b-b79e-4c10-80c3-ced3adce3de9.png)
 
+
+Install: docker python module
+![install_docker python](https://user-images.githubusercontent.com/85095592/136896616-614d9755-5aaa-4c0d-b712-57ccde59be13.png)- Install: python3-pip-
+
+
+
+![install_pip](https://user-images.githubusercontent.com/85095592/136896433-bf54fef0-140b-4b99-8d2e-2130f21e8738.png)
 
 
 
