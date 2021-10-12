@@ -58,8 +58,8 @@ Only the jumpbox machine can accept connections from the Internet. Access to thi
 Machines within the network can only be accessed byeach other.
 
 - Which machine did you allow to access your ELK VM? 
-- Web1,Web2,Web3 will send traffic to the ELK Server
-- What was its IP address?_
+- Web1, Web2, Web3 will send traffic to the ELK Server
+
 
 A summary of the access policies in place can be found in the table below.
 
