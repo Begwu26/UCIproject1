@@ -52,7 +52,7 @@ The configuration details of the machine can be found below the table.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only thejumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 3.223.125.253 
 
 Machines within the network can only be accessed byeach other.
