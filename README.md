@@ -106,25 +106,29 @@ state:present
 
 The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![dockerps](https://user-images.githubusercontent.com/85095592/136893911-456d5ee1-47e9-4eb2-9844-46496ff7f780.png)
 
-### Target Machines & Beats
+Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+-  List the IP addresses of the machines you are monitoring
+-  172.31.5.181
+-  172.31.87.142 
 
-We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+We have installed the following Beats on these machines: Web1 and Web2
+
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Metricbeat: Detects  changes in filesystem metrics as CPU usage SSH login attempts , failed sudo escalations and CPU/RAM.
+- Filebeat: Detects changes to the filesystem and collects Apache logs
 
-### Using the Playbook
+Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the playbook file to/etc/ansible.
+- Update the configuration file for each beat to include the ELK server host information.
+- Run the playbook, and navigate to http://3.142.35.241:5601/app/kibana#/home to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
