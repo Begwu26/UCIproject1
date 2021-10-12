@@ -85,10 +85,11 @@ The playbook implements the following tasks:
 
 
 Install: docker python module
-![install_docker python](https://user-images.githubusercontent.com/85095592/136896616-614d9755-5aaa-4c0d-b712-57ccde59be13.png)- Install: python3-pip-
+![install_docker python](https://user-images.githubusercontent.com/85095592/136896616-614d9755-5aaa-4c0d-b712-57ccde59be13.png)
+Install: python3-pip-
 
 
-
+Install: python3-pip-
 ![install_pip](https://user-images.githubusercontent.com/85095592/136896433-bf54fef0-140b-4b99-8d2e-2130f21e8738.png)
 
 
