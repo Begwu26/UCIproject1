@@ -110,6 +110,7 @@ Update the path with the name of your screenshot of docker ps output](Images/doc
 ![dockerps](https://user-images.githubusercontent.com/85095592/136893911-456d5ee1-47e9-4eb2-9844-46496ff7f780.png)
 
 Target Machines & Beats
+
 This ELK server is configured to monitor the following machines:
 -  List the IP addresses of the machines you are monitoring
 -  172.31.5.181
