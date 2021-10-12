@@ -77,12 +77,7 @@ The playbook implements the following tasks:
 -In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
 
 - Install: docker.io
-name:Install Docker Python module
-pip:
-name: docker
-state: present
-
-- Install: ELK
+![install_docker](https://user-images.githubusercontent.com/85095592/136896210-ed3e7bbf-871b-43ec-8fab-b15cc1aa8c98.png)- Install: ELK
 name:Install elk
 hosts : elk
 remote_user: ubuntu
