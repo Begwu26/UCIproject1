@@ -1,4 +1,4 @@
-## Automated ELK Stack Deployment
+Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 
@@ -8,7 +8,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 -[filebeat-playbook.yml](Ben file name for filebeat-playbook.yml]
 -[ELK install](elk-install.yml)
--[MetricBeat](metricbeat-playbook.yml0
+-[MetricBeat](metricbeat-playbook.yml0)
 -[hosts](hosts.txt)
 
 This document contains the following details:
@@ -20,56 +20,91 @@ This document contains the following details:
 - How to Use the Ansible Build
 
 
-### Description of the Topology
+Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly accessible,redundant orreliable in addition to restricting access to the network. Load balancers protects the system from DDos attacks by shifting attack traffic. The advantage of a jumpbox is to give access to the user from a single node that can be secured and monitored.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+-What aspect of security do load balancers protect? What is the advantage of a jump box?
+Load balancers protects the system from DDos attacks by shifting attack traffic. The advantage of a jumpbox is to give access to the user from a single node that can be secured and monitored.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log and system traffic.
 
-The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+- What does Filebeat watch for?
+Filebeat is a lightweight shipper for forwarding and centralizing log data,Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+-What does Metricbeat record?
+Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash. Metricbeat helps to monitor the servers by collecting metrics from the system and services running on the server, such as: Apache.
 
-### Access Policies
+The configuration details of the machine can be found below the table.
+
+| Name    | Function    | IP Address     | Operating System           |
+|---------|-------------|----------------|----------------------------|
+| Jump Box| Gateway     | 172.31.81.187  | Linux/UNIX                 |
+| Web1    | Server      | 172.31.5.181   | Linux/UNIX                 |
+| Web2    | Server      | 172.31.87.142  | Linux/UNIX                 |
+| ELK     | Server      | 172.31.58.215 | Linux(Ubuntu Version 20.04) |
+
+ Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only thejumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+3.223.125.253 
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed byeach other.
+
+- Which machine did you allow to access your ELK VM? 
+- Web1,Web2,Web3 will send traffic to the ELK Server
+- What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name       | Publicly Accessible | Allowed IP Addresses |
+|------------|---------------------|----------------------|
+| Jump Box   | Yes                 | 172.31.81.187        |
+| Web1       | NO                  | 172.31.81.187        |
+|  Web1      | NO                  | 172.31.81.187        |
+|  Web1      | NO                  | 172.31.81.187        |
+| ELK Server | YES                 | 172.31.81.187        |
 
-### Elk Configuration
+Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because using the configuration can berepeated automatically as new machines are added. If updates needs to be made the changes can take place in one file and then run to the individual machines.
+- What is the main advantage of automating configuration with Ansible?
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+-In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+- Install: docker.io
+name:Install Docker Python module
+pip:
+name: docker
+state: present
+
+- Install: ELK
+name:Install elk
+hosts : elk
+remote_user: ubuntu
+become: ture
+task:
+
+- Install: docker python module
+name:- Install Docker python module
+pip:
+name: docker
+start: present
+
+- Install: python3-pip-
+name: Install pip
+apt:
+name: python3-pip
+state:present
+
+
+
+
+The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
